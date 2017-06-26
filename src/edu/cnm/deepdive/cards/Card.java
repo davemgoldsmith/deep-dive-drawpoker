@@ -9,9 +9,20 @@ package edu.cnm.deepdive.cards;
  */
 public class Card implements Comparable <Card> {
 	
+	/**
+	 * Suit field for cards
+	 */
 	public final Suit suit;
+	/**
+	 * Rank field for cards
+	 */
 	public final Rank rank;
 	
+	/**
+	 * Constructor that returns the suit and rank fields
+	 * @param suit  suit of cards (Club, Diamonds, Hearts, Spades)
+	 * @param rank  rank of card (Ace through King)
+	 */
 	public Card(Suit suit, Rank rank)  { 	//Constructor
 	this.suit = suit;
 	this.rank = rank;
@@ -28,7 +39,9 @@ public class Card implements Comparable <Card> {
 		}
 		return this.rank.compareTo(card.rank);
 	}
-	
+	/**
+	 * Enum to build CLUBS, DIAMONDS, HEARTS AND SPADES
+	 */
 	public enum Suit {
 		CLUBS,
 		DIAMONDS,
@@ -55,6 +68,9 @@ public class Card implements Comparable <Card> {
 		} // end enum
 	} // end toString method
 	
+	/**
+	 * enum that builds the ranks of cards, Ace through King
+	 */
 	public enum Rank {
 		ACE(1, 'A'),
 		TWO(2, '2'),
@@ -65,27 +81,33 @@ public class Card implements Comparable <Card> {
 		SEVEN(7, '7'),
 		EIGHT(8, '8'),
 		NINE(9, '9'),
-		TEN(10, 'T'),
+		TEN(10, 'T') {
+			public String toString(){
+				return "10";
+			}
+		},
 		JACK(10, 'J'),
 		QUEEN(10, 'Q'),
 		KING(10, 'K');
 	
+	/**
+	 *   Sets up the value in unicode.
+	 */
 	public final int value;
+	/**
+	 * Sets up the symbol related to the suit of the card.
+	 */
 	public final char symbol;
 	
 	private Rank(int value, char symbol) { //constructor
 		this.value = value;
 		this.symbol = symbol;		
-	}
+	} //Rank
 	public String toString () {
-		switch (this) {
-		  case TEN:
-			return "10";
-		  default: 		
-			return new StringBuilder().append(symbol).toString();
-		}
-	}
-	}
+		return new StringBuilder().append(symbol).toString();
+		
+	} // String Class
+	} //public enum Rank
 
 	
-}
+} //Card class
