@@ -7,7 +7,7 @@ package edu.cnm.deepdive.cards;
  * @author davem
  *
  */
-public class Card {
+public class Card implements Comparable <Card> {
 	
 	public final Suit suit;
 	public final Rank rank;
@@ -19,6 +19,16 @@ public class Card {
 	public String toString() {
 		return rank.toString() + suit.toString();
 	}
+	
+	@Override
+	public int compareTo(Card card) {
+		int suitComparison = this.suit.compareTo(card.suit);
+		if (suitComparison != 0 ) {
+			return suitComparison;
+		}
+		return this.rank.compareTo(card.rank);
+	}
+	
 	public enum Suit {
 		CLUBS,
 		DIAMONDS,
@@ -60,10 +70,10 @@ public class Card {
 		QUEEN(10, 'Q'),
 		KING(10, 'K');
 	
-	private final int value;
-	private final char symbol;
+	public final int value;
+	public final char symbol;
 	
-	private Rank(int value, char symbol) {
+	private Rank(int value, char symbol) { //constructor
 		this.value = value;
 		this.symbol = symbol;		
 	}
@@ -76,4 +86,6 @@ public class Card {
 		}
 	}
 	}
+
+	
 }
