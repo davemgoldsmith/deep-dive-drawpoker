@@ -56,7 +56,7 @@ public class Deck {
   } // shuffle method
   
   /**
-   * toArray method - Return an array containing all cards in the <code>Deck</code> instance>,
+   * toArray method - Return an array containing all cards in the <code>Deck</code> instance,
    * in the current order.
    * @return  All cards in deck as an array
    */
@@ -90,6 +90,11 @@ public class Deck {
 	  return hand;
 
   } // draw method
+  
+  @Override
+	public String toString() {
+		return cards.toString();
+	}
   
 } // Deck class
 
