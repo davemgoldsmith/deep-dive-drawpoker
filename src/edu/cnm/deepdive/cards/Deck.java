@@ -42,7 +42,7 @@ public class Deck {
   
   /**
    *  shuffle method.
-   *  Throws NoSuchAlgorithmException if unable to instantiate a secure random shuffle/sort.
+   *  @throws NoSuchAlgorithmException if unable to instantiate a secure random shuffle/sort.
    */
   public void  shuffle ()  //shuffle method
 		  throws NoSuchAlgorithmException { 

@@ -48,11 +48,11 @@ public class Hand implements Comparable<Hand> {
 	
 /**
  * 
- * @param deck
+ * @param deck   deck is the 52 cards from which the hand will be dealt
  */
 	public Hand (Deck deck) {
 		this(deck, DEFAULT_HAND_SIZE);
-	} // Hand Constructo
+	} // Hand Constructor
 	
 	@Override
 	public String toString() {
