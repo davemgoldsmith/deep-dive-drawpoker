@@ -103,6 +103,7 @@ public class Card implements Comparable <Card> {
 		this.value = value;
 		this.symbol = symbol;		
 	} //Rank
+	
 	public String toString () {
 		return new StringBuilder().append(symbol).toString();
 		
